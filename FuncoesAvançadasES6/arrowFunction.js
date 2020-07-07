@@ -34,5 +34,49 @@ log(createObj());
 var log = value => {console.log(value)};
 */
 
+// Utilizando o bind
+var obj1 = {
+    showContext: function showContext(){
+        this.log('after 1000ms');
+        setTimeout(function(){
+           console.log(this);
+        }.bind(this),1000);
+    },
+    log: function log(value){
+        console.log(value);
+    }
+};
+
+obj1.showContext();
 
 
+//Utilizando o bind e atribuindo o this a uma variavel
+var obj2 = {
+    showContext: function showContext(){
+        var that = this;
+        setTimeout(function(){
+           that.log('after 1000ms');
+        }.bind(this),1000);
+    },
+    log: function log(value){
+        console.log(value);
+    }
+};  
+
+obj2.showContext();
+
+
+
+
+var obj3 = {
+    showContext: function showContext(){
+        setTimeout(() => {
+           this.log('after 1000ms');
+        },1000);
+    },
+    log: function log(value){
+        console.log(value);
+    }
+};  
+
+obj3.showContext();
