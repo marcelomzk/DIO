@@ -37,7 +37,7 @@ pending(quando está pendente e/ou em execução), fulFilled(terminou de executa
 */
 
 //Callbacks
-/*function doSomething(callback){
+/*function doSomething(callback){   
     setTimeout(function(){
         callback('First data');
     }, 1000);
